@@ -159,8 +159,8 @@ function handleEnemyCollisions(game) {
       player.vy > 0 && playerFeet - enemy.y < 18 && player.x + player.w > enemy.x + 6;
 
     if (stomp) {
-      enemy.alive = true;
-      enemy.hp = Math.max(1, enemy.hp ?? 1);
+      enemy.alive = false;
+      game.score += STOMP_SCORE;
       player.vy = -380;
     } else {
       loseLife(game);
